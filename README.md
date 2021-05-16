@@ -58,48 +58,48 @@ o seguir preguntando y saluda.
 == II
 
 - Cómo puede presentar confusiones que recibe cada función, para explicarlas las
-separaremos en las que trabajan con cadenas y las que trabajan con números.
-Las funciones en las que trabajamos con cadenas son:
+  separaremos en las que trabajan con cadenas y las que trabajan con números.
+  Las funciones en las que trabajamos con cadenas son:
 
- * mostrar_pregunta (que sería leer pregunta ,pero le cambiamos el nombre para que
-concuerde con lo que hace): muestra el mensaje de la dirección de memoria que le
-pasemos en el registro 10. Esta función es llamada en dos ocasiones para mostrar la
-“pregunta de ingreso”, y para preguntar si quiere salir o volver a ingresar alguna operación
-aritmética.Además poder reutilizarla, a esta función hay que pasarle e r3 la longitud de la
-“cadena” que se quiere mostrar.
+  * mostrar_pregunta (que sería leer pregunta ,pero le cambiamos el nombre para que
+    concuerde con lo que hace): muestra el mensaje de la dirección de memoria que le
+    pasemos en el registro 10. Esta función es llamada en dos ocasiones para mostrar la
+    “pregunta de ingreso”, y para preguntar si quiere salir o volver a ingresar alguna operación
+    aritmética.Además poder reutilizarla, a esta función hay que pasarle e r3 la longitud de la
+    “cadena” que se quiere mostrar.
 
- * ingresar_pregunta: recibe y almacena en una etiqueta la pregunta del usuario que ingresa
- por teclado, es importante que solo ingrese operaciones aritméticas o cuando el bot
- pregunte, las letras ‘q’ o ‘a’.
+  * ingresar_pregunta: recibe y almacena en una etiqueta la pregunta del usuario que ingresa
+    por teclado, es importante que solo ingrese operaciones aritméticas o cuando el bot
+    pregunte, las letras ‘q’ o ‘a’.
 
- * pregunta_valida: Esta función verifica que la pregunta comience con dígito o ‘-’.
+  * pregunta_valida: Esta función verifica que la pregunta comience con dígito o ‘-’.
 
- * es_cuenta: Esta función verifica que tenga los espacios correctos, también separa y guarda
- los operandos ,el operador y el signo en sus respectivas etiquetas, para luego extraerlos en
- otra función.
+  * es_cuenta: Esta función verifica que tenga los espacios correctos, también separa y guarda
+    los operandos ,el operador y el signo en sus respectivas etiquetas, para luego extraerlos en
+    otra función.
 
 Estas tres funciones respetan el recorrido de la anterior , en r0, donde está la dirección de
 memoria de pregunta.
 
- * numero: Esta función es llamada dos veces ya que se reutiliza para text_num1 y
- text_num2., extrae los números y los ingresa en sus etiquetas.
+  * numero: Esta función es llamada dos veces ya que se reutiliza para text_num1 y
+  text_num2., extrae los números y los ingresa en sus etiquetas.
 
- * sacar_signo: Esta función guarda un int pero trabaja con cadenas. Su función es sacar el
- signo de el operando, pero guarda en una etiqueta un entero, el cual es -1 en caso de que
- sea negativo, si no guarda el 1.
+  * sacar_signo: Esta función guarda un int pero trabaja con cadenas. Su función es sacar el
+    signo de el operando, pero guarda en una etiqueta un entero, el cual es -1 en caso de que
+    sea negativo, si no guarda el 1.
 
- * operador: extrae el operador(ascii) y lo guarda en s etiqueta.
+  * operador: extrae el operador(ascii) y lo guarda en s etiqueta.
 
- * mostrar_resultado: muestra el resultado ya pasado de int a ascii por pantalla,solo se
-mostraran 100 dígitos(porque lo decidimos así, por estética). llama a long?
+  * mostrar_resultado: muestra el resultado ya pasado de int a ascii por pantalla,solo se
+    mostraran 100 dígitos(porque lo decidimos así, por estética). llama a long?
 
- * mostrar_error: muestra “ Error no puedo operar “ si hay algún error en el ingreso de
-pregunta. Este es llamado dentro del main únicamente si en r4 se almacena el carácter ‘E’,
-dentro de alguna función.
+  * mostrar_error: muestra “ Error no puedo operar “ si hay algún error en el ingreso de
+    pregunta. Este es llamado dentro del main únicamente si en r4 se almacena el carácter ‘E’,
+    dentro de alguna función.
 
- * obtener_valores:Esta función extrae los valores de cada operando y lo guarda en su
-etiqueta (los text_numx si tenian el “-” ya no lo tienen ,ya que se extrae antes en
-sacar_signo).
+  * obtener_valores:Esta función extrae los valores de cada operando y lo guarda en su
+    etiqueta (los text_numx si tenian el “-” ya no lo tienen ,ya que se extrae antes en
+    sacar_signo).
 
 - Las funciones en las que ya trabajan con int son:
 
